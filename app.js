@@ -24,7 +24,7 @@ db.connect((err)=>{
 const app = express();
 
 app.get('/fetchdata',(req, res) =>{
- let sql = 'SELECT * FROM TEST WHERE TYPE = 1';
+ let sql = 'SELECT * FROM test WHERE TYPE = 1';
  let query = db.query(sql, (err,results) => {
      if(err) throw err;
     let response = '';

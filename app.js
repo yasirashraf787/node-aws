@@ -37,7 +37,7 @@ app.get('/fetchdata',(req, res) =>{
 });
 app.get('/', (req,res)=>{
 
-    res.send("Welcome to the home page 2.0 123456666");
+    res.send("Welcome to hello world");
 });
 
 const port = process.env.port || 3000;

@@ -8,7 +8,7 @@ const db = mysql.createConnection({
     password: 'root',
     database: 'test'
 */
-    host: 'aag2210iviwhne.cbenxjbir7bt.us-east-2.rds.amazonaws.com',
+    host: 'aaketpum4ii4nl.cbenxjbir7bt.us-east-2.rds.amazonaws.com',
     user:'admin',
     password: 'letbknown',
     database: 'test'

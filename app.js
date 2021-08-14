@@ -61,6 +61,11 @@ app.get('/api/', (req,res)=>{
     res.json({"message:" : "Welcome to hello world"});
 });
 
+app.get('/', (req,res)=>{
+
+    res.json({"message:" : "success"});
+});
+
 
 
 const port = process.env.port || 3000;

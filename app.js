@@ -23,23 +23,6 @@ db.connect((err)=>{
 
 const app = express();
 
-app.get('/api/fetchdata',(req, res) =>{
- let sql = 'SELECT * FROM test WHERE TYPE = 1';
- let query = db.query(sql, (err,results) => {
-     if(err) throw err;
-    let response = '';
-    for (var i = 0; i < results.length; i++) {
-        console.log(results[i]);
-        response = "data : " + "Type :" + results[i].type + ", Desc :"+results[i].desc
-      }
-    res.send(response);
- })
-});
-app.get('/api/', (req,res)=>{
-
-    res.json({"message:" : "Welcome to hello world"});
-});
-
 // Add headers before the routes are defined
 app.use(function (req, res, next) {
 
@@ -59,6 +42,25 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     next();
 });
+
+app.get('/api/fetchdata',(req, res) =>{
+ let sql = 'SELECT * FROM test WHERE TYPE = 1';
+ let query = db.query(sql, (err,results) => {
+     if(err) throw err;
+    let response = '';
+    for (var i = 0; i < results.length; i++) {
+        console.log(results[i]);
+        response = "data : " + "Type :" + results[i].type + ", Desc :"+results[i].desc
+      }
+    res.send(response);
+ })
+});
+app.get('/api/', (req,res)=>{
+
+    res.json({"message:" : "Welcome to hello world"});
+});
+
+
 
 const port = process.env.port || 3000;
 app.listen(port, () => {

@@ -23,7 +23,7 @@ db.connect((err)=>{
 
 const app = express();
 
-app.get('/fetchdata',(req, res) =>{
+app.get('/api/fetchdata',(req, res) =>{
  let sql = 'SELECT * FROM test WHERE TYPE = 1';
  let query = db.query(sql, (err,results) => {
      if(err) throw err;
@@ -35,9 +35,9 @@ app.get('/fetchdata',(req, res) =>{
     res.send(response);
  })
 });
-app.get('/', (req,res)=>{
+app.get('/api/', (req,res)=>{
 
-    res.send("Welcome to hello world");
+    res.json({"message:" : "Welcome to hello world"});
 });
 
 const port = process.env.port || 3000;

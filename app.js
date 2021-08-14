@@ -52,7 +52,8 @@ app.get('/api/fetchdata',(req, res) =>{
         console.log(results[i]);
         response = "data : " + "Type :" + results[i].type + ", Desc :"+results[i].desc
       }
-    res.send(response);
+    //res.send(response);
+    res.json({"type" : results[0].type, "desc":results[0].desc});
  })
 });
 app.get('/api/', (req,res)=>{
